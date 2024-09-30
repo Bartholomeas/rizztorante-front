@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { AddCategoryForm } from "./AddCategoryForm";
-import { EditCategoryForm } from "./EditCategoryForm";
-import { AddPositionForm } from "./AddPositionForm";
-import { EditPositionForm } from "./EditPositionForm";
+import { AddCategoryForm } from "./forms/AddCategoryForm";
+import { EditCategoryForm } from "./forms/EditCategoryForm";
+import { AddPositionForm } from "./forms/AddPositionForm";
+import { EditPositionForm } from "./forms/EditPositionForm";
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -42,7 +42,7 @@ export function MenuDetails({ menu: initialMenu }: MenuDetailsProps) {
   const handleUpdateCategory = (updatedCategory: Category) => {
     setMenu({
       ...menu,
-      categories: menu.categories.map(category => 
+      categories: menu.categories.map(category =>
         category.id === updatedCategory.id ? updatedCategory : category
       )
     });
@@ -74,7 +74,7 @@ export function MenuDetails({ menu: initialMenu }: MenuDetailsProps) {
         if (category.id === categoryId) {
           return {
             ...category,
-            positions: category.positions.map(position => 
+            positions: category.positions.map(position =>
               position.id === updatedPosition.id ? updatedPosition : position
             )
           };

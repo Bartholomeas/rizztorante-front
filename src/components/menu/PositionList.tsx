@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { EditPositionForm } from "./EditPositionForm";
+import { EditPositionForm } from "./forms/EditPositionForm";
 
 type Position = {
   id: string;
@@ -44,12 +44,12 @@ export function PositionList({ categoryId, positions, onAddPosition, onUpdatePos
                   </DialogTrigger>
                   <DialogContent>
                     {selectedPosition && (
-                      <EditPositionForm 
-                        position={selectedPosition} 
+                      <EditPositionForm
+                        position={selectedPosition}
                         onSuccess={(updatedPosition) => {
                           onUpdatePosition(updatedPosition);
                           setSelectedPosition(null);
-                        }} 
+                        }}
                       />
                     )}
                   </DialogContent>

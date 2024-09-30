@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { PositionList } from "./PositionList";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { AddPositionForm } from "./AddPositionForm";
-import { EditCategoryForm } from "./EditCategoryForm";
+import { AddPositionForm } from "./forms/AddPositionForm";
+import { EditCategoryForm } from "./forms/EditCategoryForm";
 
 type Category = {
   id: string;

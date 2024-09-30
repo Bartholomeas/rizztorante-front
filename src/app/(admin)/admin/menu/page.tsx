@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { MenuList } from "@/components/menu/MenuList";
-import { AddMenuForm } from "@/components/menu/AddMenuForm";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { AddMenuForm } from "@/components/menu/forms/AddMenuForm";
 
 export default function MenuPage() {
   const [isAddMenuOpen, setIsAddMenuOpen] = useState(false);

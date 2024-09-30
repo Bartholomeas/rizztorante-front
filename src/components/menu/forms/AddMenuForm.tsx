@@ -13,7 +13,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 type AddMenuFormProps = {
-  onSuccess: (newMenu: { id: string; name: string; categories: []; }) => void;
+  onSuccess: (newMenu: { id: string; name: string; }) => void;
 };
 
 export function AddMenuForm({ onSuccess }: AddMenuFormProps) {
@@ -28,7 +28,6 @@ export function AddMenuForm({ onSuccess }: AddMenuFormProps) {
     const newMenu = {
       id: Date.now().toString(), // This is a temporary ID. In a real app, this would come from the backend.
       name: data.name,
-      categories: [],
     };
     onSuccess(newMenu);
   };

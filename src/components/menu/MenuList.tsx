@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { AddMenuForm } from "./AddMenuForm";
-import { EditMenuForm } from "./EditMenuForm";
+
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { AddMenuForm } from "./forms/AddMenuForm";
+import { EditMenuForm } from "./forms/EditMenuForm";
+
 
 type Menu = {
   id: string;
