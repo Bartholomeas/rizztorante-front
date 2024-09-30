@@ -9,7 +9,7 @@ const sidebarItems = [
   { name: 'Orders', href: '/admin/orders', icon: ShoppingCart },
   { name: 'Customers', href: '/admin/customers', icon: Users },
   { name: 'Opinions', href: '/admin/opinions', icon: MessageSquare },
-  { name: 'Settings', href: '/admin/settings', icon: Settings },
+  { name: 'Restaurant Config', href: '/admin/restaurant-config', icon: Settings },
 ];
 
 export function Sidebar({ onClose }: { onClose?: () => void }) {
