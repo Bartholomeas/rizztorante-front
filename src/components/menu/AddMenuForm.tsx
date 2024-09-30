@@ -13,7 +13,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 type AddMenuFormProps = {
-  onSuccess: (newMenu: { id: string; name: string; categories: [] }) => void;
+  onSuccess: (newMenu: { id: string; name: string; categories: []; }) => void;
 };
 
 export function AddMenuForm({ onSuccess }: AddMenuFormProps) {

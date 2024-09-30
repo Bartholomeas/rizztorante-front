@@ -97,8 +97,8 @@ export default function SignInPage() {
                 render={({ field }) => (
                   <FormItem className="flex items-center space-x-2">
                     <FormControl>
-                      <Checkbox 
-                        checked={field.value} 
+                      <Checkbox
+                        checked={field.value}
                         onCheckedChange={field.onChange}
                       />
                     </FormControl>

@@ -13,7 +13,7 @@ type Category = {
   // Add other category properties
 };
 
-export function CategoryList({ menuId }: { menuId: string }) {
+export function CategoryList({ menuId }: { menuId: string; }) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [isAddPositionOpen, setIsAddPositionOpen] = useState(false);
@@ -40,7 +40,7 @@ export function CategoryList({ menuId }: { menuId: string }) {
             setIsEditCategoryOpen(true);
           }}>Edit</Button>
           <Button variant="destructive" onClick={() => handleDeleteCategory(category.id)}>Delete</Button>
-          
+
           {selectedCategory?.id === category.id && (
             <div className="mt-4">
               <Dialog open={isAddPositionOpen} onOpenChange={setIsAddPositionOpen}>

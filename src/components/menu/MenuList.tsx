@@ -38,7 +38,7 @@ export function MenuList() {
   return (
     <div className="space-y-8">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-800">Menu Management</h1>
+        <h1 className="text-3xl font-light text-gray-800">Menu Management</h1>
         <Dialog>
           <DialogTrigger asChild>
             <Button>Add New Menu</Button>
@@ -63,31 +63,31 @@ export function MenuList() {
         <Input placeholder="Search menu" className="max-w-sm" />
       </div>
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="font-semibold">Menu Name</TableHead>
-              <TableHead className="text-right font-semibold">Actions</TableHead>
+              <TableHead className="font-medium">Menu Name</TableHead>
+              <TableHead className="text-right font-medium">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {menus.map((menu) => (
               <TableRow key={menu.id}>
-                <TableCell className="font-medium">{menu.name}</TableCell>
+                <TableCell className="font-light">{menu.name}</TableCell>
                 <TableCell className="text-right">
                   <Link href={`/admin/menu/${menu.id}`} passHref>
-                    <Button variant="secondary" size="sm" className="mr-2">View</Button>
+                    <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 mr-2">View</Button>
                   </Link>
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm" className="mr-2">Edit</Button>
+                      <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-700 hover:bg-gray-100 mr-2">Edit</Button>
                     </DialogTrigger>
                     <DialogContent>
                       <EditMenuForm menu={menu} onSuccess={handleUpdateMenu} />
                     </DialogContent>
                   </Dialog>
-                  <Button variant="ghost" size="sm" className="text-red-600" onClick={() => handleDeleteMenu(menu.id)}>Delete</Button>
+                  <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 hover:bg-red-50" onClick={() => handleDeleteMenu(menu.id)}>Delete</Button>
                 </TableCell>
               </TableRow>
             ))}
@@ -96,7 +96,7 @@ export function MenuList() {
       </div>
 
       <div className="flex justify-between items-center">
-        <p className="text-sm text-gray-500">Showing 1 to {menus.length} of {menus.length} entries</p>
+        <p className="text-sm text-gray-500 font-light">Showing 1 to {menus.length} of {menus.length} entries</p>
         <div className="flex space-x-2">
           <Button variant="outline" size="sm">Previous</Button>
           <Button variant="outline" size="sm">Next</Button>
